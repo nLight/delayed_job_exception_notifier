@@ -1,6 +1,6 @@
 # DelayedJobExceptionNotifier
 
-TODO: Write a gem description
+Integrate DelayedJob with ExceptionNotifier. Allows to catch exceptions in background jobs.
 
 ## Installation
 
@@ -18,7 +18,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Add to your DelayedJob initializer
+
+    Delayed::Worker.plugins << Delayed::Plugins::ExceptionNotifier
 
 ## Contributing
 
