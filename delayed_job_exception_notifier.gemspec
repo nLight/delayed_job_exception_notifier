@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["rojkov.dmitry@gmail.com"]
   spec.description   = %q{Plugin for integration ExceptionNotifier with DelayedJob}
   spec.summary       = %q{}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/nLight/delayed_job_exception_notifier"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
