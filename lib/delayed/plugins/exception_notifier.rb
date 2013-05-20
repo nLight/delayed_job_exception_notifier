@@ -4,7 +4,7 @@ module Delayed
       module Notify
         def error(job, exception)
           ::ExceptionNotifier::Notifier.background_exception_notification(exception).deliver
-          super
+          super if defined?(super)
         end
       end
 
