@@ -1,10 +1,14 @@
+require 'delayed_job'
+
 module Delayed
   module Plugins
     class ExceptionNotifier < Plugin
       module Notify
         def error(job, exception)
-          ::ExceptionNotifier::Notifier.background_exception_notification(exception,
-            :data => { :job_id => job.id, :queue => job.queue }).deliver
+          data = {data: { job_id: job.id, queue: job.queue }}
+          
+          ::ExceptionNotifier.notify_exception(exception, data)
+          
           super if defined?(super)
         end
       end
